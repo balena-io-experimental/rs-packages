@@ -1,17 +1,19 @@
 [package]
-name = "r_etcher_lib"
-version = "0.1.0"
 edition = "2021"
-exclude = ["index.node"]
+name = "rust-typescript"
+version = "0.0.0"
 
 [lib]
 crate-type = ["cdylib"]
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
 [dependencies]
+# Default enable napi4 feature, see https://nodejs.org/api/n-api.html#node-api-version-matrix
+napi = { version = "2.10.4", default-features = false, features = ["napi4"] }
+napi-derive = "2.9.3"
+futures = "0.3.25"
 
-[dependencies.neon]
-version = "0.10"
-default-features = false
-features = ["napi-6"]
+[build-dependencies]
+napi-build = "2.0.1"
+
+[profile.release]
+lto = true
