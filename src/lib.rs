@@ -1,9 +1,13 @@
 #![deny(clippy::all)]
-use futures::stream::Stream;
-
-
 #[macro_use]
 extern crate napi_derive;
+
+use futures::stream::Stream;
+
+mod stream_interface;
+
+pub use stream_interface::*;
+
 
 #[napi]
 pub fn sum(a: i32, b: i32) -> i32 {

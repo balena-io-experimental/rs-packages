@@ -1,6 +1,6 @@
-# neon-area
+# Etcher-SDK-RS
 
-This project was bootstrapped by [create-neon](https://www.npmjs.com/package/create-neon).
+This project is a mock-up project to port Etcher-SDK to Rust.
 
 ## Installing neon-area
 
