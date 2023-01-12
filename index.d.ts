@@ -5,6 +5,19 @@
 
 export function sum(a: number, b: number): number
 export class JsSink {
+  static helloMacro(): void
+  emit(eventName: string, a1?: unknown | undefined | null, a2?: unknown | undefined | null, a3?: unknown | undefined | null, a4?: unknown | undefined | null, a5?: unknown | undefined | null): boolean
+  eventNames(): Array<string>
+  getMaxListeners(): number
+  listeners(eventName: string): number
+  off(eventName: unknown, callback: (...args: any[]) => any): this
+  on(eventName: unknown, callback: (...args: any[]) => any): this
+  once(eventName: unknown, listener: (...args: any[]) => any): this
+  prependListener(eventName: unknown, listener: (...args: any[]) => any): this
+  prependOnceListener(eventName: unknown, listener: (...args: any[]) => any): this
+  removeAllListeners(eventName?: string | undefined | null): this
+  setMaxListeners(n: number): this
+  rawListeners(eventName: string): Array<(...args: any[]) => any>
   constructor()
   cork(): void
   destroy(error?: unknown | undefined | null): this
@@ -23,18 +36,6 @@ export class JsSink {
   writableNeedDrain(): boolean
   writableObjectMode(): boolean
   write(chunk: unknown, encoding?: string | undefined | null, callback?: (...args: any[]) => any | undefined | null): boolean
-  emit(eventName: string, a1?: unknown | undefined | null, a2?: unknown | undefined | null, a3?: unknown | undefined | null, a4?: unknown | undefined | null, a5?: unknown | undefined | null): boolean
-  eventNames(): Array<string>
-  getMaxListeners(): number
-  listeners(eventName: string): number
-  off(eventName: string, callback: (...args: any[]) => any): this
-  on(eventName: unknown, callback: (...args: any[]) => any): this
-  once(eventName: unknown, listener: (...args: any[]) => any): this
-  prependListener(eventName: unknown, listener: (...args: any[]) => any): this
-  prependOnceListener(eventName: unknown, listener: (...args: any[]) => any): this
-  removeAllListeners(eventName?: string | undefined | null): this
-  setMaxListeners(n: number): this
-  rawListeners(eventName: string): Array<(...args: any[]) => any>
 }
 export class JsEventData { }
 export class JsToRustStreamString {

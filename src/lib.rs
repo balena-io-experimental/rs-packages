@@ -1,12 +1,15 @@
 #![deny(clippy::all)]
 #[macro_use]
 extern crate napi_derive;
-
+use napi::*;
 use futures::stream::Stream;
+use js_binders::*;
 
-mod stream_interface;
+mod utils;
 
-pub use stream_interface::*;
+//pub use utils::stream::stream_interface::*;
+pub use utils::events::*;
+use utils::events::{EventEmitter::{JsEventEmitter, EventEmitter}, self};
 
 
 #[napi]
